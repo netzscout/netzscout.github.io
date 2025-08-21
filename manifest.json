@@ -1,22 +1,80 @@
 {
-  "name": "Bastelglück by Reni",
+  "name": "Bastelglück by Reni - DIY & Kreative Vorlagen",
   "short_name": "Bastelglück",
-  "description": "Kreative DIY-Projekte und digitale Bastelvorlagen",
+  "description": "Entdecke einzigartige digitale Bastelvorlagen und DIY-Anleitungen. Kreative Projekte für Zuhause mit detaillierten Schritt-für-Schritt Anleitungen.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#40e0d0",
   "theme_color": "#ff69b4",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
+  "lang": "de",
+  "dir": "ltr",
+  "categories": ["lifestyle", "education", "entertainment"],
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "files/DSC_5600.jpeg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "files/DSC_5600.jpeg", 
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "screenshots": [
+    {
+      "src": "files/DSC_5600.jpeg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Bastelglück by Reni Hauptseite"
+    },
+    {
+      "src": "files/DSC_5600.jpeg",
+      "sizes": "750x1334", 
+      "type": "image/jpeg",
+      "platform": "narrow",
+      "label": "Mobile Ansicht"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Zum Shop",
+      "short_name": "Shop",
+      "description": "Direkt zum Etsy-Shop",
+      "url": "https://bastelglueckbyreni.etsy.com",
+      "icons": [
+        {
+          "src": "files/DSC_5600.jpeg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "DIY Projekte",
+      "short_name": "DIY",
+      "description": "Entdecke DIY-Projekte",
+      "url": "/#portfolio",
+      "icons": [
+        {
+          "src": "files/DSC_5600.jpeg", 
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://bastelglueckbyreni.etsy.com"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
 }

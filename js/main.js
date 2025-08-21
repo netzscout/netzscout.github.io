@@ -97,10 +97,63 @@ class ModernWebsite {
     };
   }
 
-  // Resize Handler
+  // Resize Handler mit Mobile-First Optimierung
   handleResize() {
     this.navigation.handleResize();
     this.animations.recalculate();
+    this.optimizeForViewport();
+  }
+
+  // Viewport-spezifische Optimierungen
+  optimizeForViewport() {
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+    
+    if (isMobile) {
+      // Mobile Optimierungen
+      this.enableMobileOptimizations();
+    } else if (isTablet) {
+      // Tablet Optimierungen
+      this.enableTabletOptimizations();
+    } else {
+      // Desktop Optimierungen
+      this.enableDesktopOptimizations();
+    }
+  }
+
+  enableMobileOptimizations() {
+    // Reduzierte Animationen für bessere Performance
+    document.body.classList.add('mobile-optimized');
+    
+    // Touch-Events optimieren
+    this.optimizeTouchEvents();
+  }
+
+  enableTabletOptimizations() {
+    document.body.classList.add('tablet-optimized');
+  }
+
+  enableDesktopOptimizations() {
+    document.body.classList.add('desktop-optimized');
+  }
+
+  optimizeTouchEvents() {
+    // Passive Event Listeners für bessere Scroll-Performance
+    const touchElements = document.querySelectorAll('.skill-card, .portfolio-item, .cta-button');
+    touchElements.forEach(element => {
+      element.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: true });
+      element.addEventListener('touchend', this.handleTouchEnd.bind(this), { passive: true });
+    });
+  }
+
+  handleTouchStart(e) {
+    e.target.classList.add('touch-active');
+  }
+
+  handleTouchEnd(e) {
+    setTimeout(() => {
+      e.target.classList.remove('touch-active');
+    }, 150);
   }
 
   // Keyboard Navigation
@@ -236,11 +289,19 @@ class NavigationComponent {
     this.mobileButton.setAttribute('aria-expanded', this.isOpen.toString());
     this.navLinks.classList.toggle('open', this.isOpen);
     
-    // Body scroll lock
+    // Body scroll lock mit Touch-Optimierung
     if (this.isOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      this.scrollPosition = window.pageYOffset;
+      document.body.style.top = `-${this.scrollPosition}px`;
     } else {
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      window.scrollTo(0, this.scrollPosition || 0);
     }
   }
 

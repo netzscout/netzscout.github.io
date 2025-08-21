@@ -1,0 +1,104 @@
+/* Etsy-Produkt Cards */
+.etsy-product-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.etsy-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.etsy-product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-content {
+  padding: var(--spacing-lg);
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-sm);
+}
+
+.product-price {
+  background: linear-gradient(45deg, var(--accent-pink), var(--accent-turquoise));
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 50px;
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9rem;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.3;
+}
+
+.product-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-md);
+}
+
+.product-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.buy-on-etsy-btn {
+  flex: 1;
+  background: linear-gradient(45deg, var(--accent-pink), var(--accent-turquoise));
+  color: white;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 50px;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.buy-on-etsy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-color);
+}
+
+.product-stock-indicator {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: rgba(0, 255, 0, 0.8);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-medium);
+}
+
+.product-stock-indicator.out-of-stock {
+  background: rgba(255, 0, 0, 0.8);
+}
