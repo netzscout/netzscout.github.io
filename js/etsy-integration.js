@@ -1,13 +1,25 @@
 // Moderne Etsy API Integration
 class EtsyProductManager {
   constructor() {
-          this.apiKey = 'Ylod13esnlkgzlk3o92r8cr19'; // Wird benötigt
-    this.shopId = 'BastelglueckbyReni'; // Ihr Shop-Name
+    // API-Key aus Konfiguration laden (falls vorhanden)
+    // Falls keine config.js vorhanden ist, wird nur Fallback verwendet
+    this.apiKey = (typeof CONFIG !== 'undefined' && CONFIG.etsy?.apiKey) 
+      ? CONFIG.etsy.apiKey 
+      : null;
+    this.shopId = (typeof CONFIG !== 'undefined' && CONFIG.etsy?.shopId) 
+      ? CONFIG.etsy.shopId 
+      : 'BastelglueckbyReni';
     this.fallbackProducts = this.getFallbackProducts();
   }
 
   // Automatisches Laden von Etsy
   async loadEtsyProducts() {
+    // Wenn kein API-Key konfiguriert ist, direkt Fallback verwenden
+    if (!this.apiKey || this.apiKey === 'IHR_API_KEY_HIER') {
+      console.log('Kein Etsy API-Key konfiguriert. Verwende Fallback-Produkte.');
+      return this.fallbackProducts;
+    }
+
     try {
       const response = await fetch(`https://openapi.etsy.com/v3/shops/${this.shopId}/listings/active`, {
         headers: {

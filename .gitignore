@@ -1,0 +1,108 @@
+# ============================================================================
+# .gitignore - Dateien die NICHT auf GitHub hochgeladen werden sollen
+# ============================================================================
+
+# Betriebssystem-Dateien
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor und IDE Dateien
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Log-Dateien
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Umgebungsvariablen und Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+config/secrets.json
+**/secrets/**
+**/credentials/**
+
+# API Keys und Tokens (Pattern für verschiedene Formate)
+*api*key*
+*secret*
+*password*
+*token*
+*credential*
+*auth*token*
+*private*key*
+
+# Konfigurationsdateien mit sensiblen Daten
+js/config.js
+config.js
+*.config.js
+!config.example.js
+
+# Temporäre Dateien
+*.tmp
+*.temp
+*.cache
+.cache/
+tmp/
+temp/
+
+# Backup-Dateien
+*.bak
+*.backup
+*.old
+*~
+
+# Kompilierte Dateien (falls vorhanden)
+*.class
+*.o
+*.so
+*.dylib
+
+# Node.js (falls später verwendet)
+node_modules/
+npm-debug.log
+package-lock.json
+yarn.lock
+
+# Python (falls später verwendet)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Build-Verzeichnisse
+dist/
+build/
+out/
+
+# Persönliche Notizen und Dokumentation
+notes.txt
+TODO.txt
+personal/
+private/
+
