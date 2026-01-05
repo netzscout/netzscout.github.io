@@ -135,12 +135,24 @@
         <!-- Portfolio Section mit Etsy-Integration -->
         <section class="portfolio-section" id="portfolio" aria-labelledby="portfolio-heading">
             <div class="container">
-                <h2 id="portfolio-heading">Meine Etsy-Produkte</h2>
+                <h2 id="portfolio-heading">Meine DIY-Projekte & Anleitungen</h2>
                 <div class="portfolio-filter" role="tablist" aria-label="Portfolio Kategorien">
-                    <button class="filter-btn active" data-filter="all">Alle</button>
-                    <button class="filter-btn" data-filter="diy">DIY Projekte</button>
-                    <button class="filter-btn" data-filter="templates">Digitale Vorlagen</button>
-                    <button class="filter-btn" data-filter="seasonal">Saisonal</button>
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="portfolio-grid">
+                        <span>🎨</span>
+                        <span>Alle Projekte</span>
+                    </button>
+                    <button class="filter-btn" data-filter="diy" role="tab" aria-selected="false" aria-controls="portfolio-grid">
+                        <span>🔨</span>
+                        <span>DIY Projekte</span>
+                    </button>
+                    <button class="filter-btn" data-filter="templates" role="tab" aria-selected="false" aria-controls="portfolio-grid">
+                        <span>📄</span>
+                        <span>Digitale Vorlagen</span>
+                    </button>
+                    <button class="filter-btn" data-filter="seasonal" role="tab" aria-selected="false" aria-controls="portfolio-grid">
+                        <span>🎄</span>
+                        <span>Saisonal</span>
+                    </button>
                 </div>
                 <div class="portfolio-grid" id="portfolio-grid">
                     <!-- Wird dynamisch mit Etsy-Produkten gefüllt -->
@@ -246,6 +258,6 @@
     </footer>
 
     <!-- JavaScript Module -->
-    <script type="module" src="js/main.js"></script>
+    <script src="js/portfolio-simple.js"></script>
 </body>
 </html>
