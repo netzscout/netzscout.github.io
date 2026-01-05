@@ -106,3 +106,6 @@ TODO.txt
 personal/
 private/
 
+# Sicherheitsdokumentation (nur lokal)
+SECURITY.md
+
